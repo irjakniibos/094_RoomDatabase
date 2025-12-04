@@ -45,6 +45,7 @@ import com.example.a20230140094_roomdatabase.viewmodel.provider.PenyediaViewMode
 fun HomeScreen(
     navigateToItemEntry: () -> Unit,
     navigateToItemUpdate: (Int) -> Unit,
+    navigateBack: () -> Unit,
     modifier: Modifier = Modifier,
     viewModel: HomeViewModel = viewModel(factory = PenyediaViewModel.Factory)
 ){
