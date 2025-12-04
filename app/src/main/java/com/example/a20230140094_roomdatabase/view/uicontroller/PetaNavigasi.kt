@@ -11,6 +11,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.example.a20230140094_roomdatabase.view.DetailSiswaScreen
+import com.example.a20230140094_roomdatabase.view.EditSiswaScreen
 import com.example.a20230140094_roomdatabase.view.EntrySiswaScreen
 import com.example.a20230140094_roomdatabase.view.HomeScreen
 import com.example.a20230140094_roomdatabase.view.route.DestinasiDetailSiswa
@@ -46,15 +47,20 @@ fun HostNavigasi(
 
         composable(
             route = DestinasiDetailSiswa.routeWithArgs,
-            arguments = listOf(navArgument(itemIdArg) {
+            arguments = listOf(navArgument(DestinasiDetailSiswa.itemIdArg) {
                 type = NavType.IntType
             })
         ) {
             DetailSiswaScreen(
-                //navigateToEditItem = { navController.navigate("${DestinasiEntry.route}/$it") },
+                // ... kode lain ...
+
+                // PERBAIKAN DI SINI: Gunakan DestinasiEditSiswa
+                navigateToEditItem = { navController.navigate("${DestinasiEditSiswa.route}/$it") },
+
                 navigateBack = { navController.navigateUp() }
             )
         }
+
         composable(
             route = DestinasiEditSiswa.routeWithArgs,
             arguments = listOf(
